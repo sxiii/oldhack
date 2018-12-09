@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;subset=cyrillic" rel="stylesheet"> 
+    <link href="style.css" rel="stylesheet" type="text/css" />
+     <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>OldHack: Old Hardware Classifieds [Google Spreadsheet as backend db + Handlebars + TableTop + jQuery]</h1>
+    
+    <div id="content"></div>
+    
+    <script id="item-template" type="text/x-handlebars-template">
+      <div class="postit">
+        <h3>{{name}}.</h3>
+        <div class="body">      
+        <TABLE border=0 width=100% height=100%>
+        <TR height=170px><TD width=75%>
+          {{{desc}}}
+        </TD><TD>
+        <b>{{price}} rub.</b>        
+	</TD></TR>
+	<TR heigth=30px><TD>
+{{#if btc includeZero=true}}<a href='bitcoin:{{btc}}'><img width='34px' src='https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png'></a>{{/if}}
+{{#if ltc includeZero=true}}<a href='litecoin:{{ltc}}'><img width='34px' src='https://248qms3nhmvl15d4ne1i4pxl-wpengine.netdna-ssl.com/wp-content/uploads/2014/06/Litecoin-Stagnated-or.png'></a>{{/if}}
+{{#if eth includeZero=true}}<a href='ethereum:{{eth}}'><img width='34px' src='https://cdn.iconscout.com/icon/free/png-256/ethereum-14-646004.png'></a>{{/if}}
+{{#if yandex_money includeZero=true}}<a href='https://money.yandex.ru/to/{{yandex_money}}/{{price}}'><img width='34px' src='http://www.sostav.ru/app/public/images/news/2015/03/31/0_137264_b72f3c17_orig.png'></a>{{/if}}
+</TD><TD>
+	<span><a href='mailto://{{{email}}}'><img width='34px' src='https://cdn6.aptoide.com/imgs/5/d/1/5d1f470c6fc55972d38d9896d887e5d7_icon.png'><a></span>
+        </TD></TR>
+        </TABLE>
+       </div>
+    </script>
+
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript">
+
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1NYdb6n9KsJab7rF2QXvuz3HvonXkuxMKVPBg3qZYsbs&output=html';
+
+      $(document).ready( function() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         parseNumbers: true } );
+      });
+        
+      function showInfo(data, tabletop) {
+        var source   = $("#item-template").html();
+        var template = Handlebars.compile(source);
+
+        $.each( tabletop.sheets("items").all(), function(i, item) {
+          var html = template(item);
+          $("#content").append(html);
+        });
+      }
+    
+//      document.write("Loaded");    
+    </script>
+
+<div id="content2">
+<h1>Add your own hardware!</h1>
+
+<!--
+      <div class="postit violet">
+        <form action='postit.php'>
+        <h3>name.</h3>
+        <div class="body">
+        <TABLE border=0 width=100% height=100%>
+        <TR height=170px><TD width=75%>
+          desc
+        </TD><TD>
+        <b>price rub.</b>
+        </TD></TR>
+        <TR heigth=30px><TD></TD><TD>
+        <span><a href=mailto://email>Email<a></span>
+        <input type='submit' value='Add An Add'>
+        </TD></TR>
+        </TABLE>
+        </form>
+       </div>
+-->
+
+<iframe src='form.html'></iframe>
+
+<!--
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBKkV-8mMZ2o2dWMlvFQiYy0o-ac5b_bAqu7TmQxoNQiKeEQ/viewform?embedded=true" width="400" height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+-->
+	
+<BR><BR>
+<i><h2>47hours project by Den Ivanov</h2></i>
+</div>
+
+
+  </body>
+</html>
