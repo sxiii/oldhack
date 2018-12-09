@@ -12,22 +12,23 @@ OldHack is self-hosted Google Spreadsheet-database driven classifieds engine
 timestamp | name | desc | price | email | date_from | date_to | condition | picture_url | yandex_money | btc | ltc | eth
 | - | - | - | - | - | - | - | - | - | - | - | - | - |
 
-Строки - лоты.
+The rows are lots (sale items).
 
-Обязательные поля: name, price, email (имя, цена, email)
-Система автоматически выдаёт: timestamp (дата и время добавления)
-Дополнительные поля:
-desc - описание
-date_from - дата начала размещения объявления (для функции планирования)
-date_to - дата скрытия объявления
-condition - состояние лота, работает или нет (working / broken / unknown)
-picture_url - ссылка на фото товара
-yandex_money - кошелёк Я.Д.
-btc - кошелёк BTC
-ltc - кошелёк LTC
-eth - кошелёк ETH
-
+Required fields: name, price, email
+Automatically given: timestamp
+Optional fields:
+* desc - description
+* date_from - date to start publishing an add/classified (for scheduling purposes)
+* date_to - date to hide the add/classified
+* condition - lot condition (working / broken / unknown)
+* picture_url - link to lot image
+* yandex_money - yandex.money wallet
+* btc - BTC wallet
+* ltc - LTC wallet
+* eth - ETH wallet
 
 # Example screenshot
 ![Img](https://i.imgur.com/uXtd9EB.png)
 
+# Project presentation (in Russian)
+* https://docs.google.com/presentation/d/1zzrE7dnpU0The2fRIoAqnYidcbumPj6UxriMQI-lsow/edit?usp=sharing
