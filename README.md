@@ -3,10 +3,10 @@ If you want to post a classified on your website fast and easy, or if you're hav
 # Dependencies of the project
 * [Physical] Ubuntu Server with LAMP
 * This repository
-* Handlebars.js
-* TableTop.js
-* jQuery
-* Google Sheets table with db structure like below
+* Handlebars.js (included in /js)
+* TableTop.js (included in /js)
+* jQuery (included in /js)
+* [Google Sheets table](https://docs.google.com/spreadsheets/d/1NYdb6n9KsJab7rF2QXvuz3HvonXkuxMKVPBg3qZYsbs) with db structure like below
 
 # Database structure
 timestamp | name | desc | price | email | date_from | date_to | condition | picture_url | yandex_money | btc | ltc | eth
