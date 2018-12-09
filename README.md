@@ -1,4 +1,4 @@
-OldHack is self-hosted Google Spreadsheet-database driven classifieds engine
+If you want to post a classified on your website fast and easy, or if you're having to post a lot of them, google sheets can help. Just add this code to your server and you're ready to go.
 
 # Dependencies of the project
 * [Physical] Ubuntu Server with LAMP
@@ -32,3 +32,6 @@ Optional fields:
 
 # Project presentation (in Russian)
 * https://docs.google.com/presentation/d/1zzrE7dnpU0The2fRIoAqnYidcbumPj6UxriMQI-lsow/edit?usp=sharing
+
+# Installation
+`git clone https://github.com/sxiii/oldhack`
