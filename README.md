@@ -35,3 +35,6 @@ Optional fields:
 
 # Installation
 `git clone https://github.com/sxiii/oldhack`
+
+# Example project
+* http://oldhack.ml
