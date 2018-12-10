@@ -38,3 +38,14 @@ Optional fields:
 
 # Example project
 * http://oldhack.ml
+* http://oldhack.cf
+* http://oldhack.gq
+* http://oldhack.ga
+
+# ToDo / Help needed
+* Implement registration and ads editing
+* Implement a working Cryptocompare API to calculate price for ads
+* Clean javascript libraries, maybe rewrite everything
+
+# Tested web browsers
+![Imgur](https://i.imgur.com/auM2BLC.png)
